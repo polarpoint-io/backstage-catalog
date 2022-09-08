@@ -10,7 +10,7 @@ spec:
   targets:
     - ./all-apis.yaml
     - ./all-components.yaml
-    - ./all-domais.yaml
+    - ./all-domains.yaml
     - ./all-groups.yaml
     - ./all-resources.yaml
     - ./all-systems.yaml
