@@ -5,7 +5,7 @@ metadata:
   description: Backstage IDP Portal
 
   annotations:
-    github.com/project-slug: diegoluisi/backstage
+    github.com/project-slug: polarpoint-io/backstage
     backstage.io/techdocs-ref: value
     backstage.io/kubernetes-namespace: backstage
 spec:
@@ -14,7 +14,7 @@ spec:
   system: backstage
   owner: group:sre-team
   providesApis:
-    - backstage.diegoluisi.eti.br
+    - developer.polarpoint.io
   definition: |
     openapi: "3.0.0"
     info:
@@ -23,7 +23,7 @@ spec:
       license:
         name: MIT
     servers:
-      - url: https://backstage.diegoluisi.eti.br/
+      - url: https://developer.polarpoint.io/
     paths:
       /artists:
         get:

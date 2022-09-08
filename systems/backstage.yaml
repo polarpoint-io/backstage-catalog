@@ -7,11 +7,11 @@ metadata:
     - backstage
     - idp
   links:
-    - url: https://backstage.diegoluisi.eti.br
+    - url: https://developer.polarpoint.io
       title: Backstage
       icon: dashboard
   annotations:
-    github.com/project-slug: devxp-tech/backstage
+    github.com/project-slug: polarpoint-io/backstage
     backstage.io/kubernetes-namespace: backstage
 spec:
   type: system

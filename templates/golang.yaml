@@ -83,7 +83,7 @@ spec:
             allowedHosts:
               - github.com
             allowedOwners:
-              - devxp-tech
+              - polarpoint-io
 
     - title: Infrastructure
       properties:
@@ -112,7 +112,7 @@ spec:
       action: fetch:template
       cookiecutterCompat: true
       input:
-        url: https://github.com/devxp-tech/template-app-go
+        url: https://github.com/polarpoint-io/template-app-go
         #copyWithoutRender:
         #  - .github/workflows/*
         values:
@@ -148,7 +148,7 @@ spec:
       if: ${{ parameters.kube == true }}
       input:
         targetPath: ./kube
-        url: https://github.com/devxp-tech/backstage-catalog/tree/main/devxp/skeleton/kubernetes/apps/kustomize
+        url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/kubernetes/apps/kustomize
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
@@ -160,7 +160,7 @@ spec:
       action: publish:github:pull-request
       if: ${{ parameters.kube == true }}
       input:
-        repoUrl: github.com?repo=gitops&owner=devxp-tech
+        repoUrl: github.com?repo=argocd-tooling-applications&owner=polarpoint-io
         branchName: create-${{ parameters.component_id }}
         title: ':robot: [backstage-bot] Create new App ${{ parameters.component_id }}'
         description: |
