@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: database-template
+  name: aws-database-template
   title: RDS Database Template
   description: Create a RDSInstance on AWS
 

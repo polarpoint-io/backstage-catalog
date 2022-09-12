@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: bucket-template
+  name: aws-bucket-template
   title: S3 Bucket Template
   description: Create a S3 Bucket on AWS
 
