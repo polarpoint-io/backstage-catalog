@@ -84,7 +84,7 @@ spec:
           default: false
   steps:
     - id: fetch-template
-      name: Fetch S3 Template
+      name: Fetch bucket Template
       action: fetch:template
       if: ${{ parameters.dryRun == false }}
       input:
@@ -101,7 +101,7 @@ spec:
       if: ${{ parameters.dryRun == false }}
       input:
         repoUrl: github.com?repo=argocd-tooling-applications&owner=polarpoint-io
-        branchName: create-${{ parameters.system }}-${{ parameters.env }}-s3
+        branchName: create-${{ parameters.system }}-${{ parameters.env }}-bucket
         title: ':robot: [backstage-bot] Create ${{ parameters.system }}-${{ parameters.env }}-bucket'
         description: |
           # New project: ${{ parameters.system }}
