@@ -85,7 +85,7 @@ spec:
           default: false
   steps:
     - id: fetch-template
-      name: Fetch RDS Templates
+      name: Fetch Cloud SQL Templates
       action: fetch:template
       if: ${{ parameters.dryRun == false }}
       input:

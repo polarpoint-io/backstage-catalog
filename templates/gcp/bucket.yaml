@@ -88,7 +88,7 @@ spec:
       action: fetch:template
       if: ${{ parameters.dryRun == false }}
       input:
-        targetPath: ./s3
+        targetPath: ./bucket
         url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/gcp/crossplane/bucket
         values:
           system: ${{ parameters.system }}
@@ -102,7 +102,7 @@ spec:
       input:
         repoUrl: github.com?repo=argocd-tooling-applications&owner=polarpoint-io
         branchName: create-${{ parameters.system }}-${{ parameters.env }}-s3
-        title: ':robot: [backstage-bot] Create ${{ parameters.system }}-${{ parameters.env }}-s3'
+        title: ':robot: [backstage-bot] Create ${{ parameters.system }}-${{ parameters.env }}-bucket'
         description: |
           # New project: ${{ parameters.system }}
           ${{ parameters.description if parameters.description }}

@@ -142,32 +142,32 @@ spec:
           - team: ${{ parameters.owner }}
             access: push
 
-    - id: fetch-kube
-      name: Fetch Kubernetes Templates
-      action: fetch:template
-      if: ${{ parameters.kube == true }}
-      input:
-        targetPath: ./kube
-        url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/kubernetes/apps/kustomize
-        values:
-          component_id: ${{ parameters.component_id }}
-          description: ${{ parameters.description }}
-          destination: ${{ parameters.repoUrl | parseRepoUrl }}
-          owner: ${{ parameters.owner }}
+    # - id: fetch-kube
+    #   name: Fetch Kubernetes Templates
+    #   action: fetch:template
+    #   if: ${{ parameters.kube == true }}
+    #   input:
+    #     targetPath: ./kube
+    #     url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/kubernetes/apps/kustomize
+    #     values:
+    #       component_id: ${{ parameters.component_id }}
+    #       description: ${{ parameters.description }}
+    #       destination: ${{ parameters.repoUrl | parseRepoUrl }}
+    #       owner: ${{ parameters.owner }}
 
-    - id: kube-pr
-      name: "Open PR in GitOps Repository"
-      action: publish:github:pull-request
-      if: ${{ parameters.kube == true }}
-      input:
-        repoUrl: github.com?repo=argocd-tooling-applications&owner=polarpoint-io
-        branchName: create-${{ parameters.component_id }}
-        title: ':robot: [backstage-bot] Create new App ${{ parameters.component_id }}'
-        description: |
-          # New project: ${{ parameters.component_id }}
-          ${{ parameters.description if parameters.description }}
-        sourcePath: kube
-        targetPath: apps
+    # - id: kube-pr
+    #   name: "Open PR in GitOps Repository"
+    #   action: publish:github:pull-request
+    #   if: ${{ parameters.kube == true }}
+    #   input:
+    #     repoUrl: github.com?repo=argocd-tooling-applications&owner=polarpoint-io
+    #     branchName: create-${{ parameters.component_id }}
+    #     title: ':robot: [backstage-bot] Create new App ${{ parameters.component_id }}'
+    #     description: |
+    #       # New project: ${{ parameters.component_id }}
+    #       ${{ parameters.description if parameters.description }}
+    #     sourcePath: kube
+    #     targetPath: apps
 
     - id: register
       name: Register Application in Catalog
