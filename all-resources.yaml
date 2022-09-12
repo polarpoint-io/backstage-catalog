@@ -3,7 +3,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
   name: all-resources
-  description: A collection of all Backstage example resources
+  description: A collection of all Backstage resources
 spec:
   owner: group:engineering
   targets:

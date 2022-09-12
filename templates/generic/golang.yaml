@@ -1,8 +1,8 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: golang-template-helm
-  title: Golang Template with Helm
+  name: golang-template
+  title: Golang Template
   description: Create a new GoLang Website
 
   tags:
@@ -11,7 +11,6 @@ metadata:
     - recommended
     - website
     - component
-    - helm
 spec:
   owner: group:sre-team
   type: component
@@ -113,7 +112,7 @@ spec:
       action: fetch:template
       cookiecutterCompat: true
       input:
-        url: https://github.com/polarpoint-io/template-app-go-helm
+        url: https://github.com/pvarentsov/go-backend-template
         #copyWithoutRender:
         #  - .github/workflows/*
         values:
@@ -149,14 +148,14 @@ spec:
       if: ${{ parameters.kube == true }}
       input:
         targetPath: ./kube
-        url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/kubernetes/apps/helm
+        url: https://github.com/polarpoint-io/backstage-catalog/tree/main/skeleton/kubernetes/apps/kustomize
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
 
-    - id: gitops
+    - id: kube-pr
       name: "Open PR in GitOps Repository"
       action: publish:github:pull-request
       if: ${{ parameters.kube == true }}
@@ -186,10 +185,10 @@ spec:
 
   output:
     links:
-      - title: Repository
+      - title: Go to Repository
         url: ${{ steps.publish.output.remoteUrl }}
-      - title: GitOps Pull Request
-        url: ${{ steps.gitops.output.remoteUrl }}
-      - title: Open Catalog
+      - title: Go to GitOps Pull Request
+        url: ${{ steps.kube-pr.output.remoteUrl }}
+      - title: Open in catalog
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}

@@ -8,4 +8,6 @@ metadata:
 spec:
   owner: group:engineering
   targets:
-    - ./templates/*.yaml
+    - ./templates/aws/*.yaml
+    - ./templates/gcp/*.yaml
+    - ./templates/generic/*.yaml

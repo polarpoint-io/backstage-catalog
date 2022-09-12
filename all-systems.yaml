@@ -3,7 +3,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
   name: all-systems
-  description: A collection of all Backstage example systems
+  description: A collection of all Backstage systems
 spec:
   owner: group:engineering
   targets:

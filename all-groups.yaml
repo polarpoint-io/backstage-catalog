@@ -3,7 +3,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
   name: all-groups
-  description: A collection of all Backstage example Groups
+  description: A collection of all Backstage Groups
 
 spec:
   owner: group:engineering
