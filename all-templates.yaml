@@ -9,4 +9,3 @@ spec:
   owner: group:engineering
   targets:
     - https://github.com/polarpoint-io/backstage-software-templates/blob/main/scaffolder-templates/**/template.yaml
-    - https://github.com/polarpoint-io/backstage-software-templates/blob/main/documentation-templates/**/*.md
